@@ -13,7 +13,7 @@ class Solution(object):
             if a+b >= n+1:
                 a, b = n+1-b, n+1-a
             return n, a, b
-    
+
         def get_info(n,a,b):
             ll, rr = a-1, n-b
             aa = n-ll
@@ -39,7 +39,7 @@ class Solution(object):
             # b is on the left, including center
             if b <= (n+1)/2:
                 return while_loop(n, a, b)
-            
+
             # b is on the right
             ll, rr, aa, bb = get_info(n, a, b)
             if (ll%2==1 and bb-a-1==0):
@@ -57,10 +57,9 @@ class Solution(object):
             if b <= (n+1)/2:
                 # b is on the left, all players before a can be losers
                 return 1+solve_slow((n+1)/2, 1, 2)
-            else:
-                # b is on the right
-                ll, rr, aa, bb = get_info(n, a, b)
-                keep = (b-bb-1)/2 + n%2
-                return 1+solve_slow((n+1)/2, 1, 1+keep+1) 
+            # b is on the right
+            ll, rr, aa, bb = get_info(n, a, b)
+            keep = (b-bb-1)/2 + n%2
+            return 1+solve_slow((n+1)/2, 1, 1+keep+1) 
 
         return [solve_fast(n,a,b), solve_slow(n,a,b)]

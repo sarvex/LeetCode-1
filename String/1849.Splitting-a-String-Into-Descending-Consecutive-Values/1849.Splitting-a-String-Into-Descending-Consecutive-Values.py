@@ -11,8 +11,8 @@ class Solution(object):
                 if num-1==int(s[cur:cur+l]) and dfs(s, cur+l, num-1):
                     return True
             return False        
-        
+
         for l in range(1, len(s)):
-            if dfs(s, l, int(s[0:l])):
+            if dfs(s, l, int(s[:l])):
                 return True
         return False

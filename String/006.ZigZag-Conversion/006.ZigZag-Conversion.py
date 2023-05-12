@@ -15,4 +15,3 @@ class Solution:
                 if M*i+j<len(s): res+=s[M*i+j]
                 if M*i+M-j<len(s): res+=s[M*i+M-j]
         res+=s[numRows-1::M]
-return res;

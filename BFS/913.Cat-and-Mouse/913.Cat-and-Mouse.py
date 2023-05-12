@@ -38,12 +38,9 @@ class Solution:
         ret = []
         mouse,cat,turn = curStatus
         if turn==1:
-            for prevCat in graph[cat]:
-                if prevCat==0: continue
-                ret.append((mouse,prevCat,2))
+            ret.extend((mouse, prevCat, 2) for prevCat in graph[cat] if prevCat != 0)
         else:
-            for prevMouse in graph[mouse]:
-                ret.append((prevMouse,cat,1))
+            ret.extend((prevMouse, cat, 1) for prevMouse in graph[mouse])
         return ret
     
     def allNeighboursWin(self,color,graph,status):

@@ -5,7 +5,7 @@ class Solution:
         :rtype: List[int]
         """
         s = s[0]+s
-        nums = [x for x in range(1,len(s)+1)]
+        nums = list(range(1,len(s)+1))
         i = 0
         result = []
         while i<len(s):
@@ -15,12 +15,12 @@ class Solution:
             if s[i]=='I':
                 result+=nums[:j-i]
             else:
-                result+=nums[:j-i][::-1] 
-                if i-1>=0:
+                result+=nums[:j-i][::-1]
+                if i >= 1:
                     temp = result[i-1]
                     result[i-1:j-1] = result[i:j]
                     result[j-1] = temp
             nums = nums[j-i:]
-            i=j            
+            i=j
         return result
             

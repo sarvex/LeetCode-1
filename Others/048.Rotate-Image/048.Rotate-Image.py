@@ -8,7 +8,7 @@ class Solution:
         for i in range(N//2):
             for j in range((N+1)//2):       
                 x,y = i,j
-                for k in range(3):
+                for _ in range(3):
                     m,n = N-1-y, x
                     matrix[x][y],matrix[m][n] = matrix[m][n],matrix[x][y]
                     x,y = m,n        

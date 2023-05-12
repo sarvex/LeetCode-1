@@ -6,9 +6,9 @@ class Solution:
         :rtype: bool
         """
         N = len(s)
-        dp=[False for i in range(N+1)]
+        dp = [False for _ in range(N+1)]
         dp[0]=True
-        s = '0'+s
+        s = f'0{s}'
         for i in range(1,N+1):
             for j in range(1,i+1):
                 if dp[j-1] and s[j:i+1] in wordDict:

@@ -10,9 +10,9 @@ class Solution:
         """
         dp = [math.inf for _ in range(n)]
         dp[src] = 0
-        for k in range(K+1):
+        for _ in range(K+1):
             dp_temp = dp[:]
             for (a,b,cost) in flights:
-                dp[b] = min(dp[b], dp_temp[a]+cost)    
+                dp[b] = min(dp[b], dp_temp[a]+cost)
         return dp[dst] if dp[dst]!=math.inf else -1
         

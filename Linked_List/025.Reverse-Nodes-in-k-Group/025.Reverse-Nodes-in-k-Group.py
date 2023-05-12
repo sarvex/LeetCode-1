@@ -22,13 +22,13 @@ class Solution:
                 count+=1
             if count<k: return dummyHead.next
             right = h.next
-            
+
             a,b = left.next, left.next.next
-            for i in range(k-1):                
+            for _ in range(k-1):
                 temp = b.next
                 b.next = a
                 a,b = b, temp                
-                            
+
             h = left.next
             left.next = a
             h.next = right

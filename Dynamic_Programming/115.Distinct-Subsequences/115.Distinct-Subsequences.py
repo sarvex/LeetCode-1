@@ -6,8 +6,8 @@ class Solution:
         :rtype: int
         """
         M,N = len(s),len(t)
-        s = "#"+s
-        t = "#"+t
+        s = f"#{s}"
+        t = f"#{t}"
         dp = [[0 for _ in range(N+1)] for _ in range(M+1)]
         for i in range(M+1):
             dp[i][0] = 1
